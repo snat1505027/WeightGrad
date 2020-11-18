@@ -5,7 +5,7 @@ Paper published at SIGKDD'20.<br>
 Paper Link: https://dl.acm.org/doi/10.1145/3394486.3403097<br>
 If you find this repository helpful, please cite the following:
 ```text
-  @inproceedings{10.1145/3394486.3403097,
+@inproceedings{10.1145/3394486.3403097,
   author = {Akter, Syeda Nahida and Adnan, Muhammad Abdullah},
   title = {WeightGrad: Geo-Distributed Data Analysis Using Quantization for Faster Convergence and Better Accuracy},
   year = {2020},
