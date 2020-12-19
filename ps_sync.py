@@ -179,7 +179,6 @@ def train():
       s.bind((TCP_IP, port))
       s.listen(5)
       var_val = []
-      print("\n<<<<<<< Eta ki ekbar i hoy?? >>>>>>>>>>\n")
       for v in tf.get_collection(tf.GraphKeys.TRAINABLE_VARIABLES):
         var_val.append(mon_sess.run(v, feed_dict=feed_dict))
       
@@ -214,7 +213,6 @@ def train():
             feed_dict = {}
             for i,grad_var in enumerate(recv_grads): 
                feed_dict[placeholder_gradients[i][0]] = recv_grads[i]
-            #print("\n<<<<< Happens everytime??? >>>>>>\n")
             res = mon_sess.run(train_op, feed_dict=feed_dict)
             with tf.Session() as sess:  
               print(atest.eval())
@@ -222,9 +220,8 @@ def train():
         var_val = []
         
         for v in tf.get_collection(tf.GraphKeys.TRAINABLE_VARIABLES):
-          donKnowWhat = mon_sess.run(v, feed_dict=feed_dict)
-          #print(donKnowWhat)
-          var_val.append(donKnowWhat)
+          v_temp = mon_sess.run(v, feed_dict=feed_dict)
+          var_val.append(v_temp)
         global_var_vals.value = pickle.dumps(var_val, pickle.HIGHEST_PROTOCOL)
         #print("New values of variables ready")
         done_flag.value = 1
