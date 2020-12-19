@@ -37,21 +37,6 @@ tf.app.flags.DEFINE_integer('log_frequency', 10,
                             """How often to log results to the console.""")
 gpu_options = tf.GPUOptions(per_process_gpu_memory_fraction=0.30)
 
-# def safe_recv(size, server_socket):
-#   data = ''
-#   temp = ''
-#   recv_size = 0
-#   while 1:
-#     try:
-#         temp = server_socket.recv(size-len(data))
-#         data += temp
-#         recv_size = len(data)
-#         if recv_size >= size:
-#             break
-#     except:
-#         print("Error")
-#   return data
-
 
 def safe_recv(size, server_socket):
   data = ""
